@@ -1,5 +1,4 @@
 import ProfilePage from "./ProfilePage";
-import "./UserContext";
 import { UserContext } from "./UserContext";
 
 function App() {
