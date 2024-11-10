@@ -8,17 +8,17 @@ function Contact() {
         setFormData({ ...formData, [name]: value });
     };
 
+    const handleSubmit = (e) => {
+        e.preventDefault(); // Prevents the form from submitting to a server
+        console.log('Form submitted:', formData);
+        // You can add additional form handling here, like clearing the form fields
+        setFormData({ name: '', email: '', message: '' });
+    };
+
     return (
-        <div style={{
-            backgroundColor:"#FEF3E2",
-            padding: "20px",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems:"center"
-        }}>
+        <div style={{ padding: "20px" }}>
             <h2>Contact Us</h2>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <input
                     type="text"
                     name="name"
@@ -42,6 +42,7 @@ function Contact() {
                     onChange={handleChange}
                     style={{ display: "block", margin: "10px 0" }}
                 />
+                <button type="submit" style={{ marginTop: "10px" }}>Submit</button>
             </form>
         </div>
     );
