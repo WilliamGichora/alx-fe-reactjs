@@ -1,9 +1,7 @@
-import React from 'react'
+import UserInfo from './UserInfo';
 
 function ProfilePage() {
-  return (
-    <div>ProfilePage</div>
-  )
+    return <UserInfo />;
 }
 
-export default ProfilePage
+export default ProfilePage;
