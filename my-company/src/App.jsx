@@ -8,7 +8,6 @@ import Navbar from './components/Navbar'
 import Footer from './Footer'
 
 function App() {
- 
 
   return (
     <BrowserRouter >
