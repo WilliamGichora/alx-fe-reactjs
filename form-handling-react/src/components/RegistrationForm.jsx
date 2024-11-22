@@ -5,6 +5,7 @@ function RegistrationForm() {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [errors, setErrors] = useState('');
 
     /*const handleChange = (e) => {
         /*const [name, value] = e.target;
@@ -15,10 +16,18 @@ function RegistrationForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        email.trim() || !username.trim() || password.trim() ?
-            console.error("Invalid details") : console.log("Success in validation and login");
-        
-        
+        if (!email) {
+            setErrors('Imail is required', errors);
+            return;
+        }
+        if (!username) {
+            setErrors('username is required', errors);
+            return;
+        }
+        if (!email) {
+            setErrors('password is required', errors);
+            return;
+        }
     }
 
     return (
@@ -28,7 +37,7 @@ function RegistrationForm() {
                 type="text"
                 name="username"
                 value={username}
-                onChange={(e)=>setUsername(e.target.value)} />
+                onChange={(e) => setUsername(e.target.value)} />
             <label htmlFor="email">Email</label>
             <input
                 type="email"
