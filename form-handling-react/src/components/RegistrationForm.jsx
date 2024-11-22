@@ -14,8 +14,9 @@ function RegistrationForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        /*!formData.email.trim() || !formData.username.trim() || !formData.password.trim() ?
-            console.error("Invalid details") : console.log(formData);*/
+
+        email.trim() || !username.trim() || password.trim() ?
+            console.error("Invalid details") : console.log("Success in validation and login");
         
         
     }
