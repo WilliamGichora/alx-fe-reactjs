@@ -1,4 +1,4 @@
-import { Formik, Form, Field } from 'formik';
+import { Formik, Form, Field,ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
 const SignUpSchema = Yup.object().shape({
@@ -25,13 +25,18 @@ export const formikForm = () => (
                 {errors.userName && touched.userName ? (
                     <div>{errors.firstName}</div>
                 ) : null}
+                <ErrorMessage name="username" />
+
                 <Field name="email" type="email" />
                 {errors.email && touched.email ? <div>{errors.email}</div> : null}
                 <button type="submit">Submit</button>
+                <ErrorMessage name="email" />
+
                 <Field name="password" />
                 {errors.password && touched.password ? (
                     <div>{errors.lastName}</div>
                 ) : null}
+                <ErrorMessage name="password" />
             </Form>
         )}
     </Formik>
