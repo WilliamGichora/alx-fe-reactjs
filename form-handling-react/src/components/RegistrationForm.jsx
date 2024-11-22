@@ -2,17 +2,22 @@ import { useState } from "react"
 
 function RegistrationForm() {
 
-    const [formData, setFormData] = useState({ username: '', email: '', password: '' });
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
-    const handleChange = (e) => {
-        const [name, value] = e.target;
+    /*const handleChange = (e) => {
+        /*const [name, value] = e.target;
         setFormData(prevState => ({ ...prevState, [name]: value }));
-    }
+        
+    }*/
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        !formData.email.trim() || !formData.username.trim() || !formData.password.trim() ?
-            console.error("Invalid details") : console.log(formData);
+        /*!formData.email.trim() || !formData.username.trim() || !formData.password.trim() ?
+            console.error("Invalid details") : console.log(formData);*/
+        
+        
     }
 
     return (
@@ -21,21 +26,21 @@ function RegistrationForm() {
             <input
                 type="text"
                 name="username"
-                value={formData.username}
-                onChange={handleChange} />
+                value={username}
+                onChange={(e)=>setUsername(e.target.value)} />
             <label htmlFor="email">Email</label>
             <input
                 type="email"
                 name="email"
-                value={formData.email}
-                onChange={handleChange}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
             />
             <label htmlFor="">Password</label>
             <input
                 type="password"
                 name="password"
-                value={formData.password}
-                onChange={handleChange}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
             />
         </form>
     )
