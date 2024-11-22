@@ -19,18 +19,21 @@ export const formikForm = () => (
             console.log(values);
         }}
     >
-        {({ errors, touched }) => {
+        {({ errors, touched }) => (
             <Form>
-                <Field name="userName" />
-                {errors.userName && touched.userName ? (<div>{errors.userName }</div>) : null}
+                <Field name="username" />
+                {errors.userName && touched.userName ? (
+                    <div>{errors.firstName}</div>
+                ) : null}
                 <Field name="email" type="email" />
-                {errors.email && touched.email ? (<div>{errors.email}</div>) : null}
-                <Field name="password" type="password" />
-                {errors.password && touched.password ? (<div>{errors.password}</div>) : null}
-                <button type='submit'>Submit</button>
+                {errors.email && touched.email ? <div>{errors.email}</div> : null}
+                <button type="submit">Submit</button>
+                <Field name="password" />
+                {errors.password && touched.password ? (
+                    <div>{errors.lastName}</div>
+                ) : null}
             </Form>
-        }}
-
+        )}
     </Formik>
 )
 
