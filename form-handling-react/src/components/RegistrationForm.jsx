@@ -24,7 +24,7 @@ function RegistrationForm() {
             setErrors('username is required', errors);
             return;
         }
-        if (!email) {
+        if (!password) {
             setErrors('password is required', errors);
             return;
         }
