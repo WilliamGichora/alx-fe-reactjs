@@ -19,3 +19,4 @@ const AddTodoForm = ({ addTodo }) => {
         </form>
     );
 };
+export default AddTodoForm;

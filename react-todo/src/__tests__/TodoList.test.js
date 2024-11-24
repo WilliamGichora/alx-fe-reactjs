@@ -2,6 +2,7 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import TodoList from '../TodoList';
+import AddTodoForm from '../components/AddTodoForm';
 
 test('renders initial todos', () => {
     render(<TodoList />);
