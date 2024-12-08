@@ -32,14 +32,15 @@ function RecipeDetail() {
                 <p className="font-medium">{data.summary}</p>
                 <img src={data.image} alt={data.title} className="mx-auto rounded-xl" />
                 <div className="text-center">
-                    <h3>Ingredients</h3>
+                    <h3>ingredients</h3>
                     <ul>
                         <li>Masala</li>
                         <li>Carrot</li>
                         <li>1/2 chicken</li>
                     </ul>
+                    
                 </div>
-                
+                <h3>instructions</h3>                
             </div>
         </div>
     )
