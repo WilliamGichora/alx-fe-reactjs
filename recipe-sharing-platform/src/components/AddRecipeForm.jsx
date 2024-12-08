@@ -7,16 +7,16 @@ function AddRecipeForm() {
     const [errors, setErrors] = useState({});
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault();validate
 
-        let formErrors = {};
-        if (!title) formErrors.title = "Title is required";
-        if (!ingredients) formErrors.ingredients = "Ingredients are required";
-        else if (ingredients.split(',').length < 2) formErrors.ingredients = "Please list at least two ingredients";
-        if (!steps) formErrors.steps = "Preparation steps are required";
+        let validate = {};
+        if (!title) validate.title = "Title is required";
+        if (!ingredients) validate.ingredients = "Ingredients are required";
+        else if (ingredients.split(',').length < 2) validate.ingredients = "Please list at least two ingredients";
+        if (!steps) validate.steps = "Preparation steps are required";
 
-        if (Object.keys(formErrors).length > 0) {
-            setErrors(formErrors);
+        if (Object.keys(validate).length > 0) {
+            setErrors(validate);
             return;
         }
 
