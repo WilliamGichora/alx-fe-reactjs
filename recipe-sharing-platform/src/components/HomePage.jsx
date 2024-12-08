@@ -18,9 +18,9 @@ function HomePage() {
     }, [data]);
 
     return (
-        <div className="container flex flex-col h-screen justify-center items-center mx-auto">
-            <h1 className="mx-auto md:font-bold font-sans md:text-3xl">Recipes</h1>
-            <div className=" grid grid-cols-2 md:grid-cols-3 shadow-lg hover:shadow-xl md:gap-3">
+        <div className="container flex flex-col justify-center items-center mx-auto">
+            <h1 className="mx-auto md:font-bold font-bold text-2xl font-sans md:text-3xl">Recipes</h1>
+            <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 shadow-lg hover:shadow-xl md:gap-3">
                 {data.map(recipe => (
                     <div key={recipe.id} className="flex flex-col justify-center items-center gap-4 bg-specialPink-100 rounded-xl">
                         <h2 className="sm:text-lg md:text-xl text-blue-800 my-4 hover:text-blue-500">{recipe.title}</h2>
