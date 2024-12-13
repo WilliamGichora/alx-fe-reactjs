@@ -15,7 +15,7 @@ function Search() {
         try {
             const response = await fetchUserData(searchData.trim());
             setUser(response);
-            console.log(typeof (user.login));
+            console.log(user);
 
         } catch (error) {
             setError(true);
@@ -38,6 +38,8 @@ function Search() {
             {user && <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5px' }}>
                 <p>User: {user.name}</p>
                 <p>company : {user.login}</p>
+                <p>Avatar url: {user.avatar_url}</p>
+                <img src={user.avatar_url} alt="avatar" style={{ width: '100px', height: '100px', margin: "0 auto"}} />
             </div>}
         </div>
     )
