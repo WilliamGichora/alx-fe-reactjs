@@ -35,12 +35,12 @@ function Search() {
             {isLoading && <div>Loading</div>}
             {isError && <div>Something went wrong</div>}
 
-            {user && <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5px' }}>
+            {user? (<div style={{ display: 'flex', flexDirection: 'column', gap: '0.5px' }}>
                 <p>User: {user.name}</p>
                 <p>company : {user.login}</p>
                 <p>Avatar url: {user.avatar_url}</p>
                 <img src={user.avatar_url} alt="avatar" style={{ width: '100px', height: '100px', margin: "0 auto"}} />
-            </div>}
+            </div>) : <div>Looks like we cant find the user</div> }
         </div>
     )
 }
