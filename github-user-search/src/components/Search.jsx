@@ -20,8 +20,14 @@ function Search() {
             if (location) query.push(`location:${location}`);
             if (minRepos) query.push(`repos:>${minRepos}`);
 
-            const searchQuery = query.join(" ");
-            const response = await fetchAdvancedUserData(searchQuery);
+            //const searchQuery = query.join(" ");
+            const response = await fetchAdvancedUserData({
+                username: username.trim(),
+                location: location.trim(),
+                minRepos: minRepos ? Number(minRepos) : null,
+                page: 1,
+                perPage: 10,
+            });
 
             setUsers(response.items || []);
         } catch (error) {
