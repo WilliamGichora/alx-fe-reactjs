@@ -11,7 +11,7 @@ import axios from "axios";
  * 
  * @returns {Object} - The response data from the GitHub API.
  */
-const fetchAdvancedUserData = async ({ username, location, minRepos, page = 1, perPage = 30 }) => {
+const fetchUserData = async ({ username, location, minRepos, page = 1, perPage = 30 }) => {
     try {
         const queryParts = [];
         if (username) queryParts.push(`user:${username}`);
@@ -30,4 +30,4 @@ const fetchAdvancedUserData = async ({ username, location, minRepos, page = 1, p
     }
 };
 
-export default fetchAdvancedUserData;
+export default fetchUserData;
