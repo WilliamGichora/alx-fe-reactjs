@@ -1,13 +1,13 @@
-import axios from "axios"
+import axios from "axios";
 
-const fetchUserData = async (searchInput) => {
+const fetchAdvancedUserData = async (query) => {
     try {
-        const response = await axios.get(`https://api.github.com/users/${searchInput}`);
-        return response.data
+        const response = await axios.get(`https://api.github.com/search/users?q=${query}`);
+        return response.data;
     } catch (error) {
-        return console.error(`Error: ${error}`);
+        console.error(`Error: ${error}`);
+        throw error;
     }
+};
 
-}
-
-export default fetchUserData;
+export default fetchAdvancedUserData;
